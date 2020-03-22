@@ -3,7 +3,12 @@ const search = document.getElementById('search');
 const result = document.getElementById('result');
 const more = document.getElementById('more');
 
+
+
+
 const apiURL = 'https://api.lyrics.ovh';
+
+
 
 // Search by song or artist
 async function searchSongs(term) {
@@ -13,9 +18,10 @@ async function searchSongs(term) {
   showData(data);
 }
 
+
 // Show song and artist in DOM
 function showData(data) {
-  result.innerHTML = `
+    result.innerHTML = `
     <ul class="collection songs">
       ${data.data
         .map(
@@ -24,6 +30,7 @@ function showData(data) {
       <a href="#!" class="secondary-content"><button class="getLyricsLink" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button></a>
     </li>`
         )
+        .sort()
         .join('')}
     </ul>
   `;
@@ -32,19 +39,23 @@ function showData(data) {
     more.innerHTML = `
       ${
         data.prev
-          ? `<button class="moreLink" onclick="getMoreSongs('${data.prev}')">Prev</button>`
+          ? `<a href="#!"><button class="getLyricsLink moreLink" onclick="getMoreSongs('${data.prev}')">Prev</button></a>`
           : ''
       }
       ${
         data.next
-          ? `<button class="moreLink" onclick="getMoreSongs('${data.next}')">Next</button>`
+          ? `<a href="#!"><button class="getLyricsLink moreLink" onclick="getMoreSongs('${data.next}')">Next</button></a>`
           : ''
       }
     `;
   } else {
     more.innerHTML = '';
   }
+  
+
+
 }
+
 
 // Get prev and next songs
 async function getMoreSongs(url) {
@@ -65,9 +76,18 @@ async function getLyrics(artist, songTitle) {
         const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
 
         result.innerHTML = `
+            <div class="container>
+            <div class="row">
+            <div class="col s12">
+            <div class="card-panel transparent">
             <h2 class="songInfo"><strong>${artist}</strong> - ${songTitle}</h2>
             <span class="lyrics">${lyrics}</span>
             <div class="container center"><a class="goBack" href="index.html"><i class="material-icons">arrow_back</i>Back</a></div>
+            </div>
+            </div>
+            </div>
+            </div>
+
         `;
   }
 
@@ -78,7 +98,7 @@ async function getLyrics(artist, songTitle) {
 form.addEventListener('submit', e => {
   e.preventDefault();
 
-  const searchTerm = search.value.trim();
+  var searchTerm = search.value.trim();
 
   if (!searchTerm) {
     alert('Please type in a search term');
