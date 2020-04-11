@@ -4,8 +4,10 @@
 
 body {
     background-color: rgba(33, 74, 123, 0.8);
+    /* background-color: #efefef; */
     /* background-image: linear-gradient(to top, rgb(74, 144, 226), rgb(29, 67, 113)); */
     font-family: Lato;
+    color: #fff;
 } 
 
 button {
@@ -86,9 +88,18 @@ form button {
 }
 
 button.getLyricsLink {
-    color: #fff;
+    color: #eee;
     background-color: transparent;
     border: none;
+    border-radius: 8px;
+}
+
+.collection.songs {
+    border: none;
+}
+
+.collection.songs .collection-item {
+    border-bottom-color: #000;;
 }
 
 ul.songs {
@@ -113,11 +124,6 @@ ul.songs li {
 .container p {
     text-align: center;
     font-size: 1.4rem;
-}
-
-.songInfo,
-.lyrics {
-    color: #fff;
 }
 
 .nebLogoHolder {

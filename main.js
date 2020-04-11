@@ -14,14 +14,29 @@ const apiURL = 'https://api.lyrics.ovh';
 async function searchSongs(term) {
   const res = await fetch(`${apiURL}/suggest/${term}`);
   const data = await res.json();
-
+  var searchTerm = search.value.trim();
+  
+  data.data.forEach(function(song){
+    var boName = [];
+    boName.push(song.artist.name);
+    if(searchTerm == boName){
+      console.log(boName);
+    }
+  
+  });
+ 
   showData(data);
+  
 }
 
 
 // Show song and artist in DOM
 function showData(data) {
     result.innerHTML = `
+    <div class="container>
+    <div class="row">
+    <div class="col s12">
+    <div class="card-panel transparent">
     <ul class="collection songs">
       ${data.data
         .map(
@@ -33,6 +48,10 @@ function showData(data) {
         .sort()
         .join('')}
     </ul>
+    </div>
+    </div>
+    </div>
+    </div>
   `;
 
   if (data.prev || data.next) {
@@ -71,7 +90,7 @@ async function getLyrics(artist, songTitle) {
   const data = await res.json();
 
    if (data.error) {
-        result.innerHTML = data.error;
+        result.innerHTML = '<h2>Gah! Lyrics for this tune arent available quite yet!</h2>';
    } else {
         const lyrics = data.lyrics.replace(/(\r\n|\r|\n)/g, '<br>');
 
