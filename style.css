@@ -4,14 +4,16 @@
 
 body {
     background-color: rgba(33, 74, 123, 0.8);
-    /* background-color: #efefef; */
-    /* background-image: linear-gradient(to top, rgb(74, 144, 226), rgb(29, 67, 113)); */
     font-family: Lato;
     color: #fff;
 } 
 
 button {
     cursor: pointer;
+}
+
+.card-panel-lyrics {
+    background-color: rgba(33, 74, 123, 0.8)
 }
 
 
@@ -64,7 +66,11 @@ form {
     color: #fff;
     font-size: 1.5rem;
 }
-
+@media(max-width:850px){
+    .lyricsForm input[type="text"] {
+        font-size: 1.2rem;
+    }
+}
 
 form button {
     position: absolute;
@@ -76,6 +82,12 @@ form button {
     color: #fff;
     font-size: 16px;
     padding: 10px 25px;
+}
+
+@media(max-width:850px){
+    form button {
+        font-size: 0.875rem;
+    }
 }
 
 .moreLink,
@@ -112,6 +124,31 @@ ul.songs li {
     font-size: 1.5rem;
 }
 
+@media(max-width:1000px){
+    ul.songs li {
+        font-size: 1.1rem;
+    }
+}
+
+.getLyricsLink i {
+    margin-left: 15px;
+    vertical-align: text-bottom;
+}
+
+.songInfo {
+    display: inline-block;
+    max-width: 50%;
+}
+h2.songInfo {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.lyrics {
+    display: block;
+}
+
+
 .container {
     margin: 30px auto;
     max-width: 100%;
@@ -132,8 +169,8 @@ ul.songs li {
 .nebLogo {
     margin: auto;
     justify-content: space-between;
-    width: 170px;
-    height: 170px;
+    width: 100px;
+    height: 100px;
     stroke: #fff;
     animation: logoSpin 3s linear 0s normal infinite;
     transform-style: preserve-3d;
@@ -141,33 +178,27 @@ ul.songs li {
     opacity: .4;
 }
 
-.nebLogo:nth-of-type(2) {
+/* .nebLogo:nth-of-type(2) {
     width: 200px;
     height: 200px;
-}
-
-  
-  @keyframes logoSpin {
+} */
+ 
+@keyframes logoSpin {
     0% {
-      transform: rotate(0deg);
-      margin-top: 2%;
+        transform: rotate(0deg);
     }
     25% {
-      transform:  rotate(90deg);
-      margin-top: 6%;
+        transform:  rotate(90deg);
     }
     50% {
         transform:  rotate(180deg);
-        margin-top: 12%;
-      }
+        }
     75% {
         transform:  rotate(270deg);
-        margin-top: 6%;
     }
     100% {
         transform:  rotate(360deg);
-        margin-top: 2%;
     }
-  }
+}
 
 

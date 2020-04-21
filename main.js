@@ -36,13 +36,13 @@ function showData(data) {
     <div class="container>
     <div class="row">
     <div class="col s12">
-    <div class="card-panel transparent">
+    <div class="card-panel card-panel-lyrics">
     <ul class="collection songs">
       ${data.data
         .map(
           song => `<li class="collection-item transparent left-align">
       <span class="songInfo"><strong>${song.artist.name}</strong> - ${song.title}</span>
-      <a href="#!" class="secondary-content"><button class="getLyricsLink" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button></a>
+      <a href="#!" class="secondary-content"><button class="getLyricsLink" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics<i class="material-icons">queue_music</i></button></a>
     </li>`
         )
         .sort()
@@ -98,8 +98,8 @@ async function getLyrics(artist, songTitle) {
             <div class="container>
             <div class="row">
             <div class="col s12">
-            <div class="card-panel transparent">
-            <h2 class="songInfo"><strong>${artist}</strong> - ${songTitle}</h2>
+            <div class="card-panel card-panel-lyrics">
+            <h2 class="songInfo center"><strong>${artist}</strong> - ${songTitle}</h2>
             <span class="lyrics">${lyrics}</span>
             <div class="container center"><a class="goBack" href="index.html"><i class="material-icons">arrow_back</i>Back</a></div>
             </div>
@@ -137,3 +137,4 @@ result.addEventListener('click', e => {
     getLyrics(artist, songTitle);
   }
 });
+
