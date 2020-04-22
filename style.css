@@ -126,7 +126,7 @@ ul.songs li {
 
 @media(max-width:1000px){
     ul.songs li {
-        font-size: 1.1rem;
+        font-size: 0.9rem;
     }
 }
 
