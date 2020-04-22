@@ -131,8 +131,8 @@ ul.songs li {
 }
 
 .getLyricsLink i {
-    margin-left: 5px;
-    vertical-align: text-bottom;
+    padding-left: 3px;
+    vertical-align: middle;
 }
 
 .songInfo {
