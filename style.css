@@ -146,7 +146,7 @@ h2.songInfo {
 
 @media(max-width:1000px) {
     h2.songInfo {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 
