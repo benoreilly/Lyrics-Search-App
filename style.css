@@ -144,6 +144,12 @@ h2.songInfo {
     max-width: 100%;
 }
 
+@media(max-width:1000px) {
+    h2.songInfo {
+        font-size: 1rem;
+    }
+}
+
 .lyrics {
     display: block;
 }
