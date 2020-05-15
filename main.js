@@ -41,8 +41,8 @@ function showData(data) {
       ${data.data
         .map(
           song => `<li class="collection-item transparent left-align">
-      <span class="songInfo"><strong>${song.artist.name}</strong> - ${song.title}</span>
-      <a href="#!" class="secondary-content"><button class="getLyricsLink" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics<i class="material-icons">queue_music</i></button></a>
+      <span class="songInfo"><i class="material-icons">queue_music</i><strong>${song.artist.name}</strong> - ${song.title}</span>
+      <a href="#!" class="secondary-content"><button class="getLyricsLink" data-artist="${song.artist.name}" data-songtitle="${song.title}">Get Lyrics</button></a>
     </li>`
         )
         .sort()

@@ -130,10 +130,11 @@ ul.songs li {
     }
 }
 
-.getLyricsLink i {
-    padding-left: 3px;
+.songInfo i {
+    padding-right: 6px;
     vertical-align: middle;
 }
+
 
 .songInfo {
     display: inline-block;
