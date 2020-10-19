@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="main.css" as="style">
+    <link rel="preconnect" href="/scripts/main.js" as="script">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Open+Sans:400,500|Material+Icons">
+    <link rel="stylesheet" href="main.css" type="text/css">
     <title>Lyrics Search App</title>
 </head>
 <body>
@@ -16,23 +17,21 @@
         <div class="container">
             <div class="row">
                 <div class="col s12">    
-                        <form id="form" class="lyricsForm" autocomplete="off"> 
-                            <div class="input-field col s12">
-                                <input type="text" id="search" placeholder="Enter artist or song name...">
-                                <button class="searchBtn" type="submit">Search</button>
-                            </div>
-                        </form>
+                    <form id="form" class="lyricsForm" autocomplete="off"> 
+                        <div class="input-field col s10">
+                            <input type="text" id="search" placeholder="Enter artist or song name...">
+                        </div>
+                        <div class="input-field col s2">
+                            <button class="btn" type="submit">Search</button>
+                        </div>
+                    </form>
                 </div>
-    
             </div>
         </div>
-
-
     </header>
-
     <main>
         <section>
-            <div  class="container">
+            <div class="container">
                 <div class="row">
                     <div class="col s12">
                         <div id="result" class="center">
@@ -44,11 +43,11 @@
                                 </div> 
                             </div>
                         </div>
-
                     </div>            		
                 </div>
                 <div class="row">
                     <div class="col s12">
+                        <div id="result-count" class="center"></div>
                         <div id="more" class="center"></div>
                     </div>
                 </div>          
@@ -63,16 +62,18 @@
 
         </section>
     </main>
-
-
-
+    <a href="#" id="scroll" class="hide-on-small-only">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+            <path d="M0 0h24v24H0V0z" fill="none" />
+            <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" /></svg>
+    </a>
 
 
     
-    <script src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+        integrity="sha256-U/cHDMTIHCeMcvehBv1xQ052bPSbJtbuiw4QA9cTKz0=" crossorigin="anonymous">
+    </script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
