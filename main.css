@@ -114,10 +114,16 @@ form button {
   }
 }
 
+.landing-container {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .next-link,
 .prev-link,
 .go-back {
-  /* background-color: transparent; */
   border: none;
   font-size: 1.5rem;
   margin: 20px;
@@ -204,6 +210,7 @@ ul.songs {
   margin-bottom: 1rem;
   z-index: 1;
   min-width: 50%;
+  max-width: 90%;
 }
 
 audio:focus {
@@ -215,7 +222,6 @@ audio {
 }
 
 .songInfo {
-  width: 100%;
   padding: 8px;
   margin: 10px;
   white-space: normal;
